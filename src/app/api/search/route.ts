@@ -15,14 +15,8 @@ const configBase = {
     idleTimeoutMillis: 30000,
   },
   connectionTimeout: 30000,
-  authentication: {
-    type: 'ntlm' as const,
-    options: {
-      domain: 'DESKTOP-5IK0H2G',
-      userName: 'Lirj',
-      password: 'sonydell',
-    },
-  },
+  user: 'TestAppUser',
+  password: 'TestApp@2024!',
 };
 
 export async function POST(request: Request) {

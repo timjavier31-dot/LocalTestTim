@@ -1,13 +1,11 @@
 import { NextResponse } from 'next/server';
 import sql from 'mssql';
 
-const DB_CONNECTION_DOMAIN = 'DESKTOP-5IK0H2G';
-const DB_CONNECTION_USERNAME = 'Lirj';
-const DB_CONNECTION_PASSWORD = 'sonydell';
-
 const configBase = {
   server: 'localhost',
   port: 54791,
+  user: 'TestAppUser',
+  password: 'TestApp@2024!',
   options: {
     trustServerCertificate: true,
     enableArithAbort: true,
@@ -65,21 +63,9 @@ export async function POST(request: Request) {
     }
   }
 
-  const config = {
-    ...configBase,
-    authentication: {
-      type: 'ntlm' as const,
-      options: {
-        domain: DB_CONNECTION_DOMAIN,
-        userName: DB_CONNECTION_USERNAME,
-        password: DB_CONNECTION_PASSWORD,
-      },
-    },
-  };
-
   try {
     const masterPool = await new sql.ConnectionPool({
-      ...config,
+      ...configBase,
       database: 'master',
     }).connect();
 
@@ -98,7 +84,7 @@ export async function POST(request: Request) {
     }
 
     const appPool = await new sql.ConnectionPool({
-      ...config,
+      ...configBase,
       database: TEST_DATABASE,
     }).connect();
 
