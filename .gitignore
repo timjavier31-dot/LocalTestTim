@@ -22,6 +22,9 @@ wp-content/plugins/akismet/
 
 # Node modules — too large, regenerated via npm install
 wp-content/plugins/grade4math-blocks/node_modules/
+node_modules/
+.next
+out
 
 # Build artifacts — optional: include if you want to show built output
 # wp-content/plugins/grade4math-blocks/build/
@@ -33,3 +36,9 @@ Thumbs.db
 # Local WP specific
 wp-content/debug.log
 local-xdebuginfo.php
+
+# Env files
+npm-debug.log*
+*.env.local
+*.env.*.local
+.env

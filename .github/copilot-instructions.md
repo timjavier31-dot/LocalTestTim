@@ -1,0 +1,4 @@
+- Scaffold a Next.js full-stack app in the current folder.
+- Include a frontend page in `src/app/page.tsx` and a backend API route in `src/app/api/hello/route.ts`.
+- Use TypeScript, Tailwind CSS, and ESLint.
+- Keep project files minimal and ready to run with `npm install` and `npm run dev`.
