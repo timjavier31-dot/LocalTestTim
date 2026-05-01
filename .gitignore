@@ -1,0 +1,35 @@
+# WordPress core — not yours, don't upload
+wp-admin/
+wp-includes/
+wp-*.php
+index.php
+xmlrpc.php
+license.txt
+readme.html
+
+# Sensitive config
+wp-config.php
+
+# Uploads (media files)
+wp-content/uploads/
+
+# Default themes — not yours
+wp-content/themes/twentytwenty*/
+
+# Default plugins
+wp-content/plugins/hello.php
+wp-content/plugins/akismet/
+
+# Node modules — too large, regenerated via npm install
+wp-content/plugins/grade4math-blocks/node_modules/
+
+# Build artifacts — optional: include if you want to show built output
+# wp-content/plugins/grade4math-blocks/build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local WP specific
+wp-content/debug.log
+local-xdebuginfo.php
