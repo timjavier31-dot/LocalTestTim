@@ -9,11 +9,12 @@
   "description": "Add a styled Grade 4 math problem with a show/hide answer.",
   "keywords": ["math", "problem", "grade4", "question"],
   "attributes": {
-    "question": { "type": "string", "default": "" },
-    "answer":   { "type": "string", "default": "" },
-    "hint":     { "type": "string", "default": "" },
-    "level":    { "type": "string", "default": "easy" },
-    "topic":    { "type": "string", "default": "multiplication" }
+    "question":      { "type": "string", "default": "" },
+    "answer":        { "type": "string", "default": "" },
+    "hint":          { "type": "string", "default": "" },
+    "level":         { "type": "string", "default": "easy" },
+    "topic":         { "type": "string", "default": "multiplication" },
+    "studentAnswer": { "type": "string", "default": "" }
   },
   "editorScript": "file:./index.js",
   "style":        "file:./style-index.css"

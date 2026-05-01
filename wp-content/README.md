@@ -19,7 +19,9 @@ A custom WordPress site built as an interactive math learning platform for Grade
 ### Quiz
 ![Quiz](screenshots/quiz.png)
 
-### Easy Level Page (Gutenberg blocks)
+### Easy Level Page — Math Problem Block (Gutenberg)
+> Each problem card is a custom Gutenberg block. Students can type their answer directly, then reveal the correct answer.
+
 ![Easy Level](screenshots/easy-level.png)
 
 ---
@@ -29,7 +31,12 @@ A custom WordPress site built as an interactive math learning platform for Grade
 - **6 Math Topics** — Multiplication, Division, Fractions, Geometry, Measurement, Data & Graphs
 - **Random Practice Problems** — 90+ problems across all topics, filtered by topic and difficulty
 - **Random Quiz** — 10 multiple-choice questions per session with live scoring
-- **Custom Gutenberg Block** — "Math Problem" block for teachers to add styled problems anywhere
+- **Custom Gutenberg Block** — "Math Problem" block with:
+  - Question field
+  - Student answer input (students type directly on the page)
+  - Hidden correct answer revealed via Show/Hide button
+  - Difficulty level and topic badge
+  - Optional hint
 - **Fully custom theme** — built from scratch with PHP, CSS, and JavaScript
 
 ## Tech Stack
@@ -63,8 +70,8 @@ wp-content/
     └── grade4math-blocks/     # Custom Gutenberg block plugin
         ├── grade4math-blocks.php
         ├── src/
-        │   ├── block.json     # Block metadata
-        │   ├── index.js       # Block registration
+        │   ├── block.json     # Block metadata + attributes
+        │   ├── index.js       # Block registration + deprecated handler
         │   ├── edit.js        # Editor component (React)
         │   ├── save.js        # Frontend HTML output
         │   └── style.css      # Block styles (editor + frontend)

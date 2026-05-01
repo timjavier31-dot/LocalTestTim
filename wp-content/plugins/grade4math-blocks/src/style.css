@@ -52,6 +52,55 @@
     margin-bottom: 14px;
 }
 
+/* Student Answer Input */
+.mp-student-answer-wrap {
+    margin: 14px 0;
+}
+.mp-student-answer-label {
+    display: block;
+    font-size: .8rem;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+.mp-student-answer-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px dashed #bbb;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: rgba(255,255,255,.7);
+    color: #333;
+    outline: none;
+    transition: border-color .2s;
+}
+.mp-student-answer-input:focus {
+    border-color: #4a90e2;
+    border-style: solid;
+    background: #fff;
+}
+
+/* Editor preview of student answer */
+.mp-student-answer-editor {
+    background: rgba(255,255,255,.55);
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin: 10px 0;
+}
+.mp-student-answer-editor .mp-student-answer-label {
+    font-size: .78rem;
+    font-weight: 700;
+    color: #4a90e2;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    display: block;
+}
+
 /* Show / Hide (details/summary) */
 .mp-details { margin-top: 4px; }
 

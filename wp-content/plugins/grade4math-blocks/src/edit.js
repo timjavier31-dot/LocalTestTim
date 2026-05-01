@@ -18,7 +18,7 @@ const TOPICS = [
 ];
 
 export default function Edit( { attributes, setAttributes } ) {
-    const { question, answer, hint, level, topic } = attributes;
+    const { question, answer, hint, level, topic, studentAnswer } = attributes;
 
     const blockProps = useBlockProps( {
         className: `math-problem-block level-${ level }`,
@@ -66,31 +66,35 @@ export default function Edit( { attributes, setAttributes } ) {
                     onChange={ val => setAttributes( { question: val } ) }
                     placeholder="Type your math question here…"
                 />
-						
-						 <RichText
-                    tagName="div"
-                    className="mp-answer-question"
-                    value={ question }
-                    onChange={ val => setAttributes( { question: val } ) }
-                    placeholder="Type your answer here…"
-                />
 
                 { hint && (
                     <div className="mp-hint">💡 Hint: { hint }</div>
                 ) }
 
+                <div className="mp-student-answer-editor">
+                    <div className="mp-student-answer-label">✏️ Student Answer Line</div>
+                    <RichText
+                        tagName="div"
+                        className="mp-student-answer-preview"
+                        value={ studentAnswer }
+                        onChange={ val => setAttributes( { studentAnswer: val } ) }
+                        placeholder="Optional: pre-fill a sample answer or leave blank for students to fill in…"
+                    />
+                    <p className="mp-editor-note">👆 Shows as a writeable input on the live site.</p>
+                </div>
+
                 <div className="mp-answer-editor">
-                    <div className="mp-answer-label">✅ Answer</div>
+                    <div className="mp-answer-label">✅ Correct Answer (hidden)</div>
                     <RichText
                         tagName="div"
                         className="mp-answer-text"
                         value={ answer }
                         onChange={ val => setAttributes( { answer: val } ) }
-                        placeholder="Type the answer here…"
+                        placeholder="Type the correct answer here…"
                     />
                 </div>
 
-                <p className="mp-editor-note">👆 Answer will be hidden with a Show/Hide button on the live site.</p>
+                <p className="mp-editor-note">👆 Correct answer will be hidden with a Show/Hide button on the live site.</p>
             </div>
         </>
     );

@@ -33,6 +33,10 @@
     "topic": {
       "type": "string",
       "default": "multiplication"
+    },
+    "studentAnswer": {
+      "type": "string",
+      "default": ""
     }
   },
   "editorScript": "file:./index.js",

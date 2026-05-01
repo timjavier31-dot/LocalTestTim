@@ -16,7 +16,7 @@ const TOPIC_LABELS = {
 };
 
 export default function save( { attributes } ) {
-    const { question, answer, hint, level, topic } = attributes;
+    const { question, answer, hint, level, topic, studentAnswer } = attributes;
 
     const blockProps = useBlockProps.save( {
         className: `math-problem-block level-${ level }`,
@@ -35,6 +35,16 @@ export default function save( { attributes } ) {
             { hint && (
                 <div className="mp-hint">💡 Hint: { hint }</div>
             ) }
+
+            <div className="mp-student-answer-wrap">
+                <label className="mp-student-answer-label">✏️ Your Answer:</label>
+                <input
+                    type="text"
+                    className="mp-student-answer-input"
+                    defaultValue={ studentAnswer || '' }
+                    placeholder="Write your answer here…"
+                />
+            </div>
 
             <details className="mp-details">
                 <summary className="mp-show-btn">Show Answer</summary>
