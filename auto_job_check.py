@@ -1,10 +1,7 @@
 import csv
 import os
-import smtplib
 import sys
 from datetime import datetime
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 
 try:
     import requests
@@ -17,9 +14,8 @@ TRACKER_FILE = "job_applications.csv"
 FIELDS = ["id", "date_applied", "company", "role", "platform", "status", "notes"]
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 
-EMAIL_TO = "timjavier31@gmail.com"
-GMAIL_USER = os.environ.get("GMAIL_USER", "")
-GMAIL_APP_PASSWORD = os.environ.get("GMAIL_APP_PASSWORD", "")
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
+GITHUB_REPO = os.environ.get("GITHUB_REPOSITORY", "")
 
 REMOTEOK_KEYWORDS = ["fullstack", "full-stack", "sql", "database", "ai automation", "automation"]
 ONLINEJOBS_KEYWORDS = ["fullstack", "sql database", "ai automation"]
@@ -128,51 +124,53 @@ def save_new_jobs(new_jobs):
             next_id += 1
 
 
-# ── Email ─────────────────────────────────────────────────────────────────────
+# ── GitHub Issue notification ─────────────────────────────────────────────────
 
-def send_email(new_jobs):
-    if not GMAIL_USER or not GMAIL_APP_PASSWORD:
-        print("Email skipped: GMAIL_USER or GMAIL_APP_PASSWORD not set.")
+def create_github_issue(new_jobs):
+    if not GITHUB_TOKEN or not GITHUB_REPO:
+        print("GitHub issue skipped: not running inside GitHub Actions.")
         return
 
     today = datetime.now().strftime("%Y-%m-%d")
-    subject = f"New Jobs Found ({len(new_jobs)}) — {today}"
+    title = f"New Jobs Found ({len(new_jobs)}) — {today}"
 
     by_platform = {}
     for job in new_jobs:
         by_platform.setdefault(job.get("platform", "Unknown"), []).append(job)
 
-    lines = [f"Found {len(new_jobs)} new job(s) matching your search on {today}.\n"]
+    lines = [f"Found **{len(new_jobs)} new job(s)** matching your keywords on {today}.\n"]
     for platform, jobs in by_platform.items():
-        lines.append(f"\n{'=' * 45}")
-        lines.append(f"{platform}  ({len(jobs)} job(s))")
-        lines.append(f"{'=' * 45}")
+        lines.append(f"\n## {platform} ({len(jobs)} job(s))\n")
         for job in jobs:
-            lines.append(f"\n  Role:    {job.get('role')}")
-            lines.append(f"  Company: {job.get('company')}")
-            if job.get("job_type"):
-                lines.append(f"  Type:    {job.get('job_type')}")
-            if job.get("salary"):
-                lines.append(f"  Salary:  {job.get('salary')}")
             url = job.get("notes", "").split(" | ")[0].strip()
-            if url:
-                lines.append(f"  URL:     {url}")
-    lines.append("\n\nFull list saved in job_applications.csv in your GitHub repo.")
+            role = job.get("role", "Unknown")
+            company = job.get("company", "See URL")
+            jtype = job.get("job_type", "")
+            salary = job.get("salary", "")
 
-    msg = MIMEMultipart()
-    msg["From"] = GMAIL_USER
-    msg["To"] = EMAIL_TO
-    msg["Subject"] = subject
-    msg.attach(MIMEText("\n".join(lines), "plain"))
+            lines.append(f"### [{role}]({url})")
+            lines.append(f"- **Company:** {company}")
+            if jtype:
+                lines.append(f"- **Type:** {jtype}")
+            if salary:
+                lines.append(f"- **Salary:** {salary}")
+            lines.append(f"- **Link:** {url}\n")
 
-    try:
-        with smtplib.SMTP("smtp.gmail.com", 587) as server:
-            server.starttls()
-            server.login(GMAIL_USER, GMAIL_APP_PASSWORD)
-            server.sendmail(GMAIL_USER, EMAIL_TO, msg.as_string())
-        print(f"Email sent to {EMAIL_TO}")
-    except Exception as e:
-        print(f"Email failed: {e}")
+    lines.append("\n---\n_Full list saved in `job_applications.csv` in this repo._")
+
+    body = "\n".join(lines)
+    api_url = f"https://api.github.com/repos/{GITHUB_REPO}/issues"
+    resp = requests.post(
+        api_url,
+        json={"title": title, "body": body, "labels": ["jobs"]},
+        headers={
+            "Authorization": f"Bearer {GITHUB_TOKEN}",
+            "Accept": "application/vnd.github+json",
+        },
+        timeout=15,
+    )
+    resp.raise_for_status()
+    print(f"GitHub issue created: {resp.json()['html_url']}")
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
@@ -238,7 +236,7 @@ def main():
             print(f"  + [{job['platform']}]{jtype} {job['role']} — {job['company']}")
         save_new_jobs(all_new)
         print(f"Saved to {TRACKER_FILE}")
-        send_email(all_new)
+        create_github_issue(all_new)
     else:
         print("No new jobs found today.")
 
