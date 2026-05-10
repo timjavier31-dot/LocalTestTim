@@ -162,15 +162,17 @@ def create_github_issue(new_jobs):
     api_url = f"https://api.github.com/repos/{GITHUB_REPO}/issues"
     resp = requests.post(
         api_url,
-        json={"title": title, "body": body, "labels": ["jobs"]},
+        json={"title": title, "body": body},
         headers={
             "Authorization": f"Bearer {GITHUB_TOKEN}",
             "Accept": "application/vnd.github+json",
         },
         timeout=15,
     )
-    resp.raise_for_status()
-    print(f"GitHub issue created: {resp.json()['html_url']}")
+    if resp.ok:
+        print(f"GitHub issue created: {resp.json()['html_url']}")
+    else:
+        print(f"GitHub issue failed ({resp.status_code}): {resp.text}")
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
