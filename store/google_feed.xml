@@ -1,0 +1,106 @@
+<?xml version="1.0" ?>
+<rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
+  <channel>
+    <title>LocalTestTim Store</title>
+    <link>https://timjavier31-dot.github.io/LocalTestTim</link>
+    <description>Product feed for LocalTestTim Store</description>
+    <item>
+      <g:id>PROD001</g:id>
+      <g:title>Men's Classic White T-Shirt</g:title>
+      <g:description>Comfortable 100% cotton white t-shirt for everyday wear. Available in multiple sizes. Machine washable. Preshrunk fabric to maintain fit after washing.</g:description>
+      <g:link>https://timjavier31-dot.github.io/LocalTestTim/products/mens-classic-white-tshirt.html</g:link>
+      <g:image_link>https://placehold.co/800x800?text=White+T-Shirt</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>19.99 USD</g:price>
+      <g:brand>BasicWear</g:brand>
+      <g:gtin>012345678901</g:gtin>
+      <g:mpn>BW-TSHIRT-WHT-001</g:mpn>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Clothing &gt; Shirts &amp; Tops</g:google_product_category>
+      <g:shipping_weight>0.3 kg</g:shipping_weight>
+      <g:color>White</g:color>
+      <g:size>M</g:size>
+      <g:gender>male</g:gender>
+      <g:age_group>adult</g:age_group>
+      <g:material>Cotton</g:material>
+    </item>
+    <item>
+      <g:id>PROD002</g:id>
+      <g:title>Wireless Bluetooth Earbuds with Noise Cancellation</g:title>
+      <g:description>High quality wireless earbuds with active noise cancellation and 24 hour total battery life. IPX4 water resistant. Includes charging case. Compatible with iOS and Android.</g:description>
+      <g:link>https://timjavier31-dot.github.io/LocalTestTim/products/wireless-bluetooth-earbuds.html</g:link>
+      <g:image_link>https://placehold.co/800x800?text=Bluetooth+Earbuds</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>49.99 USD</g:price>
+      <g:brand>SoundMax</g:brand>
+      <g:sale_price>39.99 USD</g:sale_price>
+      <g:gtin>012345678902</g:gtin>
+      <g:mpn>SM-EARBUDS-BT-002</g:mpn>
+      <g:google_product_category>Electronics &gt; Audio &gt; Headphones</g:google_product_category>
+      <g:shipping_weight>0.2 kg</g:shipping_weight>
+      <g:color>Black</g:color>
+      <g:gender>unisex</g:gender>
+      <g:age_group>adult</g:age_group>
+    </item>
+    <item>
+      <g:id>PROD003</g:id>
+      <g:title>Insulated Stainless Steel Water Bottle 1 Liter</g:title>
+      <g:description>Double-wall vacuum insulated stainless steel water bottle. Keeps drinks cold for 24 hours and hot for 12 hours. BPA free. Leak proof lid. Wide mouth for easy cleaning.</g:description>
+      <g:link>https://timjavier31-dot.github.io/LocalTestTim/products/stainless-steel-water-bottle.html</g:link>
+      <g:image_link>https://placehold.co/800x800?text=Water+Bottle</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>29.99 USD</g:price>
+      <g:brand>HydroLife</g:brand>
+      <g:gtin>012345678903</g:gtin>
+      <g:mpn>HL-BOTTLE-1L-003</g:mpn>
+      <g:google_product_category>Home &amp; Garden &gt; Kitchen &amp; Dining &gt; Drinkware</g:google_product_category>
+      <g:shipping_weight>0.5 kg</g:shipping_weight>
+      <g:color>Silver</g:color>
+      <g:size>1L</g:size>
+      <g:gender>unisex</g:gender>
+      <g:age_group>adult</g:age_group>
+      <g:material>Stainless Steel</g:material>
+    </item>
+    <item>
+      <g:id>PROD004</g:id>
+      <g:title>Non-Slip Yoga Mat Extra Thick 6mm</g:title>
+      <g:description>Premium non-slip yoga mat with alignment lines printed on surface. Extra thick 6mm provides superior joint support. Includes carry strap. Dimensions: 183cm x 61cm.</g:description>
+      <g:link>https://timjavier31-dot.github.io/LocalTestTim/products/yoga-mat-non-slip.html</g:link>
+      <g:image_link>https://placehold.co/800x800?text=Yoga+Mat</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>35.99 USD</g:price>
+      <g:brand>FlexFit</g:brand>
+      <g:gtin>012345678904</g:gtin>
+      <g:mpn>FF-YOGAMAT-6MM-004</g:mpn>
+      <g:google_product_category>Sporting Goods &gt; Exercise &amp; Fitness &gt; Yoga &amp; Pilates</g:google_product_category>
+      <g:shipping_weight>1.2 kg</g:shipping_weight>
+      <g:color>Purple</g:color>
+      <g:size>183cm x 61cm</g:size>
+      <g:gender>unisex</g:gender>
+      <g:age_group>adult</g:age_group>
+      <g:material>TPE</g:material>
+    </item>
+    <item>
+      <g:id>PROD005</g:id>
+      <g:title>Slim Bifold Genuine Leather Wallet</g:title>
+      <g:description>Handcrafted genuine leather slim bifold wallet. Features 6 card slots, 2 bill compartments, and 1 ID window. RFID blocking technology protects your cards. Available in brown and black.</g:description>
+      <g:link>https://timjavier31-dot.github.io/LocalTestTim/products/leather-wallet-slim-bifold.html</g:link>
+      <g:image_link>https://placehold.co/800x800?text=Leather+Wallet</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>24.99 USD</g:price>
+      <g:brand>UrbanCarry</g:brand>
+      <g:gtin>012345678905</g:gtin>
+      <g:mpn>UC-WALLET-BF-005</g:mpn>
+      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Wallets</g:google_product_category>
+      <g:shipping_weight>0.1 kg</g:shipping_weight>
+      <g:color>Brown</g:color>
+      <g:gender>male</g:gender>
+      <g:age_group>adult</g:age_group>
+      <g:material>Leather</g:material>
+    </item>
+  </channel>
+</rss>
