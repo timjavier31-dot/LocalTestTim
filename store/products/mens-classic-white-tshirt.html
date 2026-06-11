@@ -4,6 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Men's Classic White T-Shirt - LocalTestTim Store</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Men's Classic White T-Shirt",
+    "image": "https://placehold.co/800x800?text=White+T-Shirt",
+    "description": "Comfortable 100% cotton white t-shirt for everyday wear. Available in multiple sizes. Machine washable. Preshrunk fabric to maintain fit after washing.",
+    "sku": "PROD001",
+    "mpn": "BW-TSHIRT-WHT-001",
+    "brand": { "@type": "Brand", "name": "BasicWear" },
+    "color": "White",
+    "size": "M",
+    "material": "Cotton",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://timjavier31-dot.github.io/LocalTestTim/products/mens-classic-white-tshirt.html",
+      "priceCurrency": "USD",
+      "price": "19.99",
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
   <style>
     body { font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; }
     nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #ddd; margin-bottom: 20px; }
@@ -49,7 +73,7 @@
       <div class="availability">In Stock — Ships within 1-2 business days</div>
       <p>Comfortable 100% cotton white t-shirt for everyday wear. Available in multiple sizes. Machine washable. Preshrunk fabric to maintain fit after washing.</p>
 
-      <button class="btn" onclick="alert('This is a demo store. No real purchase will be made.')">Add to Cart</button>
+      <button class="btn" onclick="var b=this; b.textContent='Added to Cart ✓'; b.style.background='#27ae60'; setTimeout(function(){b.textContent='Add to Cart'; b.style.background='#333';}, 2000)">Add to Cart</button>
 
       <div class="shipping-info">
         <p><strong>Free shipping</strong> on orders over $50</p>
