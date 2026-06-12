@@ -6,3 +6,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://timjavier31-dot.github.io/LocalTestTim/sitemap.xml
