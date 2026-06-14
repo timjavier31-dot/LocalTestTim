@@ -16,7 +16,7 @@
       <g:brand>BasicWear</g:brand>
       <g:mpn>BW-TSHIRT-WHT-001</g:mpn>
       <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Apparel &amp; Accessories &gt; Clothing &gt; Shirts &amp; Tops</g:google_product_category>
+      <g:google_product_category>212</g:google_product_category>
       <g:shipping_weight>0.3 kg</g:shipping_weight>
       <g:color>White</g:color>
       <g:size>M</g:size>
@@ -37,7 +37,7 @@
       <g:sale_price>39.99 USD</g:sale_price>
       <g:identifier_exists>no</g:identifier_exists>
       <g:mpn>SM-EARBUDS-BT-002</g:mpn>
-      <g:google_product_category>Electronics &gt; Audio &gt; Headphones</g:google_product_category>
+      <g:google_product_category>397</g:google_product_category>
       <g:shipping_weight>0.2 kg</g:shipping_weight>
       <g:color>Black</g:color>
       <g:gender>unisex</g:gender>
@@ -55,7 +55,7 @@
       <g:brand>HydroLife</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:mpn>HL-BOTTLE-1L-003</g:mpn>
-      <g:google_product_category>Home &amp; Garden &gt; Kitchen &amp; Dining &gt; Drinkware</g:google_product_category>
+      <g:google_product_category>2920</g:google_product_category>
       <g:shipping_weight>0.5 kg</g:shipping_weight>
       <g:color>Silver</g:color>
       <g:size>1L</g:size>
@@ -75,7 +75,7 @@
       <g:brand>FlexFit</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:mpn>FF-YOGAMAT-6MM-004</g:mpn>
-      <g:google_product_category>Sporting Goods &gt; Exercise &amp; Fitness &gt; Yoga &amp; Pilates</g:google_product_category>
+      <g:google_product_category>499736</g:google_product_category>
       <g:shipping_weight>1.2 kg</g:shipping_weight>
       <g:color>Purple</g:color>
       <g:size>183cm x 61cm</g:size>
@@ -95,7 +95,7 @@
       <g:brand>UrbanCarry</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
       <g:mpn>UC-WALLET-BF-005</g:mpn>
-      <g:google_product_category>Apparel &amp; Accessories &gt; Handbags, Wallets &amp; Cases &gt; Wallets</g:google_product_category>
+      <g:google_product_category>3032</g:google_product_category>
       <g:shipping_weight>0.1 kg</g:shipping_weight>
       <g:color>Brown</g:color>
       <g:gender>male</g:gender>
